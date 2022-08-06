@@ -1,11 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { useTypedSelector } from "../hooks/useTypeSelector";
-import { fetchUsers } from "../store/action-creater/user";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { fetchUsers } from "../store/action-creater/users";
 
 const UserList: React.FC = () => {
-  const {users, loading, error} = useTypedSelector((state) => state.user);
-  const dispatch = useDispatch();
+  const {users, loading, error} = useAppSelector((state) => state.users);
+  const dispatch = useAppDispatch();
   
   React.useEffect(() => {
     dispatch(fetchUsers());
