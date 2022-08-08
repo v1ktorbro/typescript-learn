@@ -8,11 +8,11 @@ export const fetchUsers = () => {
       dispatch({
         type: UserActionTypes.FETCH_USERS,
       });
-      const responce = await axios.get('https://jsonplaceholder.typicode.com/users');
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       setTimeout(() => {
         dispatch({
           type: UserActionTypes.FETCH_USERS_SUCCESS, 
-          payload: responce.data,
+          payload: response.data,
         });
       }, 500);
     } catch (error) {
