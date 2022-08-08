@@ -1,10 +1,10 @@
 import React from "react";
 import { useAppSelector } from "../hooks/hooks";
-import { userActions } from "../hooks/userActions";
+import { useActions } from "../hooks/useActions";
 
 const UserList: React.FC = () => {
   const {users, loading, error} = useAppSelector((state) => state.users);
-  const {fetchUsers} = userActions();
+  const {fetchUsers} = useActions();
   
   React.useEffect(() => {
     fetchUsers();
